@@ -1,21 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import Login from "./components/login.js"
+import UserLogin from "./components/userLogin.js"
 
 // let city = {
 // name: "Mumbai",
 // country: "india"
 // };
-function Hello() {
-  //  return <h1>welcome tO React </h1>
-   return ( 
-   <div>
-        <h1>welcome to react</h1>
-        <h1>let's build something cool</h1>
-    </div>);
-}
+// function Hello() {
+//   //  return <h1>welcome tO React </h1>
+//    return ( 
+//    <div>
+//         <h1>welcome to react</h1>
+//         <h1>let's build something cool</h1>
+//     </div>);
+// }
 
 ReactDOM.render(
+  
 //React.createElement("h1", {style: { color:"red" } } , "Hello Sarvottam"),
 //<h1 class="heading">Sarvottam is living in {city.name} {city.country}</h1>,
 /* <ul>
@@ -25,7 +29,9 @@ ReactDOM.render(
     <li>Ravindra Prasad</li>
     <li>Anita Devi</li>
 </ul>, */
-<Hello></Hello>,
-    document.getElementById('root')
+//<Hello></Hello>,
+//<Login name={'sarvottam'}> </Login>,
+<UserLogin></UserLogin>,
+  document.getElementById('root')
 );
 
