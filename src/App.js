@@ -3,7 +3,7 @@ import './App.css';
 import Login from "./components/Login/login.js"
 import Signup from "./components/Signup/signup.js"
 import React from 'react';
-
+import AuthControl from "./components/Login/AuthControl"
 class App extends React.Component {
 
   constructor(props) {
@@ -18,14 +18,17 @@ handleClick(condition) {
   this.setState( {condition} )
 }
 
+
+
 render() {
  const { condition } = this.state;
  return (
-     <div>
-         <button onClick={() => this.handleClick(true)}>Login</button>
-         <button onClick={() => this.handleClick(false)}>Signup</button>
-         {condition === true ? <Login /> : <Signup />}
-     </div>
+   <AuthControl/>
+    //  <div className="container">
+    //      <button onClick={() => this.handleClick(true)}>Login</button>
+    //      <button onClick={() => this.handleClick(false)}>Signup</button>
+    //      {condition === true ? <Login /> : <Signup />}
+    //  </div>
  )
 }
   // return (
