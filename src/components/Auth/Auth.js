@@ -1,17 +1,27 @@
+import React, { useState } from 'react';
+import Login from "../Login/login"
+import Signup from "../Signup/signup"
 function LoginButton(props) {
+
     return (
-      <button onClick={props.onClick}>
-        Login
-      </button>
+      <div>
+      <Login />
+      <SignUpButton />
+      </div>
+
     );
   }
   
-  function LogoutButton(props) {
+  function SignUpButton(props) {
+    const [showSignup, setShowSignup] = useState(false);
+
+    console.log("Signup clicked")
     return (
-      <button onClick={props.onClick}>
-        Logout
+      <button onClick={() => setShowSignup(true)}>
+          {showSignup ? < Signup/> : null}
+        SignUp
       </button>
     );
   }
 
-export  {LoginButton,LogoutButton}
+export  {LoginButton,SignUpButton}

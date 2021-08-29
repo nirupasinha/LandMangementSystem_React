@@ -16,23 +16,17 @@ class Login extends React.Component {
   };
 
   handleInputChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
  
   }
 
   async submitData(event) {
     event.preventDefault()
 
-    const data =await service.login(this.state);
-    // console("===========================data ",data)
-    localStorage.setItem('userData', JSON.stringify(data.result.data));
-    console.log("data here ",data)
+    const data = await service.login(this.state);
+    console.log("===========================data ",data)
+    localStorage.setItem('authToken', JSON.stringify(data.result.data));
 
   }
   render() {
@@ -54,7 +48,7 @@ class Login extends React.Component {
             // value={this.state.numberOfGuests}
             onChange={this.handleInputChange} />
         </label><br />
-        <button type="submit">Submit</button>
+        <button type="submit">Login</button>
       </form>
      
     );

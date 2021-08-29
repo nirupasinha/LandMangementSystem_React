@@ -1,14 +1,14 @@
 import React from 'react';
 import reactDom from 'react-dom';
-import {LoginButton,LogoutButton} from "./Auth" 
+import {LoginButton,SignUpButton} from "./Auth" 
 import Greeting from "./Greeting"
+import Home from "../Home/HomePage"
 
 class AuthControl extends React.Component {
     constructor(props) {
       super(props);
       this.handleLoginClick = this.handleLoginClick.bind(this);
       this.handleLogoutClick = this.handleLogoutClick.bind(this);
-      this.state = {isLoggedIn: false};
     }
   
     handleLoginClick() {
@@ -20,17 +20,16 @@ class AuthControl extends React.Component {
     }
   
     render() {
-      const isLoggedIn = this.state.isLoggedIn;
+      const isLoggedIn = localStorage.getItem('authToken');
       let button;
       if (isLoggedIn) {
-        button = <LogoutButton onClick={this.handleLogoutClick} />;
+        button = <Home/>;
       } else {
-        button = <LoginButton onClick={this.handleLoginClick} />;
+        button = <LoginButton />;
       }
   
       return (
         <div>
-          <Greeting isLoggedIn={isLoggedIn} />
           {button}
         </div>
       );
