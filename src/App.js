@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Login from "./components/Login/login.js"
 import Signup from "./components/Signup/signup.js"
+import Dashboard from "./components/Dashboard"
 import React from 'react';
 
 class App extends React.Component {
@@ -24,7 +25,7 @@ render() {
      <div>
          <button onClick={() => this.handleClick(true)}>Login</button>
          <button onClick={() => this.handleClick(false)}>Signup</button>
-         {condition === true ? <Login /> : <Signup />}
+         {condition === true ? <Dashboard /> : <Signup />}
      </div>
  )
 }
